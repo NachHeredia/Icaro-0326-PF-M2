@@ -1,4 +1,4 @@
-# Ninalu — Estructura de contenido para el Ecommerce
+# Ninalu — Estructura de contenido
 
 ## 1. Datos generales del sitio
 | Campo | Valor |
@@ -7,7 +7,7 @@
 | Paleta de colores | Celeste y Lila |
 | Stack técnico | HTML, CSS, Bootstrap, JavaScript |
 
-## 2. Categorías (menú de navegación)
+## 2. Categorías (para el menú de navegación)
 1. Productos de limpieza
 2. Alimentos y productos para animales
 3. Higiene y cuidado personal
@@ -78,7 +78,13 @@
 
 ---
 
-## 4. Notas para el desarrollo
-- Cada producto podría modelarse como un objeto JS con: `id`, `nombre`, `descripcion`, `categoria`, `presentaciones: [{ medida, precio }]`, `imagen`.
-- Los productos con más de una presentación (ej. Detergente Manos Suaves) necesitan un array de opciones en vez de un precio único.
-- "Ofertas semanales" puede tratarse como una categoría más en la estructura de datos, pero mostrarse aparte en el home (ej. carrusel o sección destacada).
+## 4. Notas del desarrollo
+- Cada producto se modelará como un objeto JS con: `id`, `nombre`, `descripcion`, `categoria`, `presentaciones: [{ medida, precio }]`, `imagen`.
+- Para los productos con más de una presentación (ej. Detergente Manos Suaves) se creará un array de opciones en vez de un precio único.
+
+
+---
+
+## 5.  High Quality Wireframe UI
+
+![Imagen](https://www.figma.com/design/0eaPoJCKfpuY7r8nZGYSZM/PILAZE?node-id=2088-224&t=bx1GkUfNJ4wsqZAT-4)
