@@ -64,7 +64,7 @@ body{
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: .5rem 2rem;
+  padding: .5rem 20rem;
   background-color: var(--brand-lila);
 }
 
@@ -150,10 +150,26 @@ h2{
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 450px;
-  border: 1px solid black;
+  max-width: 500px;
 }
 
+#search-bar{
+    width: 100%;
+    padding: 0.6rem 2.8rem 0.6rem 1.2rem;
+    border: 1px solid rgb(190, 188, 188);
+    border-radius: 20px;   
+}
+
+#search-bar:focus {
+  border-color: var(--text-muted);
+}
+
+.search-icon{
+    position: absolute;
+    right: 14px;
+    color: rgb(190, 188, 188);
+    pointer-events: none;
+}
 
 .cart-btn,.nav-bar > button:last-of-type {
   display: flex;
