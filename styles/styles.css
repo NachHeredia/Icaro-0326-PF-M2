@@ -56,11 +56,7 @@ body{
   --btn-primary-text: #121217;
   --border-color: rgba(255, 255, 255, 0.1);
 }
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="light"]) {
-    color-scheme: light;
-  }
-}
+
 
 .nav-bar{
   display: flex;
@@ -79,6 +75,10 @@ h2{
   font-weight: 800;
   color: var(--btn-primary-bg);
   letter-spacing: 0.5px;
+}
+
+.logo-link{
+  text-decoration: none;
 }
 
 .categoriesSearch-container{
@@ -232,6 +232,7 @@ h2{
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
   transition: transform 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
 }
 
 .btn-sale:hover {
@@ -357,4 +358,170 @@ h2{
 .contact-footer, .adress-footer{
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.category-title {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  color: var(--brand-celeste);
+  text-transform: uppercase;
+  margin: 2.5rem 0 1.25rem;
+  text-align: center;
+}
+
+.category-section:first-of-type .category-title {
+  margin-top: 0;
+}
+
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.product-card {
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(58, 58, 69, 0.08);
+  text-align: left;
+}
+
+.product-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden; 
+  background: linear-gradient(160deg, var(--celeste-500) 0%, var(--lila-500) 100%);
+}
+
+.product-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-discount {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: green;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.product-card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+  text-align: left;
+}
+
+.product-card__name {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.qty-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.qty-pill {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--btn-primary-text);
+  border: 1.5px solid var(--brand-celeste);
+  border-radius: 20px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.qty-pill:hover {
+  border-color: var(--brand-celeste-hover);
+  color: var(--brand-celeste-hover);
+  transform: scale(1);
+}
+
+.qty-pill.is-selected {
+  background: var(--celeste-100);
+  border-color: var(--celeste-700);
+  color: var(--brand-celeste-hover);
+  font-weight: 600;
+}
+
+.product-card__desc {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.product-card__footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.price-label {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.price-value {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--accent-700);
+  margin: 0 0 0.5rem;
+}
+
+.btn-add-cart {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--brand-lila);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-add-cart:hover {
+  background-color: var(--brand-celeste-hover);
+  font-weight: 700;
+}
+
+.btn-add-cart:focus-visible {
+  outline: 3px solid var(--celeste-500);
+  outline-offset: 2px;
 }

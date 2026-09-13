@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="../styles/styles.css" />
+    <title>Categorías</title>
+</head>
+<body>
+
+<nav class="nav-bar">
+        <a href="../index.html" class="logo-link">
+            <h2 >Ninalu</h2>
+        </a>
+    <div class="categoriesSearch-container">
+      <div class="dropdown-container">
+        <button class="hamburger-btn" aria-expanded="false" aria-controls="categories-menu">
+        <span>&#9776;</span>
+        <span class="btn-text">Categorías</span>
+        </button>
+        <ul id="categories-menu" class="dropdown-menu">
+          <li><a href="/limpieza">Limpieza</a></li>
+          <li><a href="/animales">Animales</a></li>
+          <li><a href="/higiene">Higiene</a></li>
+          <li><a href="/aromatizantes">Aromatizantes</a></li>
+          <li><a href="/accesorios">Accesorios</a></li>
+        </ul>
+      </div>
+      <div class="search-container">
+        <input type="text" name="search-bar" id="search-bar" class="search-bar" value="" placeholder="Buscar..." />
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+    </div>
+
+    <button class="cart-btn">
+      <span>Carrito</span>
+      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 0 1-8 0"></path>
+      </svg>
+    </button>
+  </nav>
+
+
+<main class="categorias-main">
+    <h1 class="page-title">Categorías</h1>
+
+    <div class="category-filter-bar">
+      <button class="filter-pill is-active" type="button" data-filter="limpieza">Limpieza</button>
+      <button class="filter-pill" type="button" data-filter="animales">Animales</button>
+      <button class="filter-pill" type="button" data-filter="higiene">Higiene</button>
+      <button class="filter-pill" type="button" data-filter="aromatizantes">Aromatizantes</button>
+      <button class="filter-pill" type="button" data-filter="accesorios">Accesorios</button>
+    </div>
+
+    <section class="category-section" data-category="limpieza">
+      <h2 class="category-title">LIMPIEZA</h2>
+      <div class="card-grid">
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/limpieza-detergente-manos-suaves.svg" alt="Detergente Manos Suaves">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Detergente Manos Suaves</h3>
+          <div class="qty-options">
+          <button class="qty-pill is-selected" type="button">1/2 LT</button>
+          <button class="qty-pill" type="button">5 LT</button>
+          </div>
+          <p class="product-card__desc">Para lavar vajillas, corta la grasa y cuida tus manos.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$1.200</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/limpieza-jabon-liquido-ropa.svg" alt="Jabón líquido para ropa">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Jabón líquido para ropa</h3>
+          <div class="qty-options">
+          <button class="qty-pill is-selected" type="button">1,5 LT</button>
+          <button class="qty-pill" type="button">2 LT</button>
+          </div>
+          <p class="product-card__desc">Tipo Skip, para lavar ropa a mano o en lavarropas.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$2.200</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/limpieza-suavizante-ropa.svg" alt="Suavizante para ropa">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Suavizante para ropa</h3>
+          <div class="qty-options">
+          <button class="qty-pill is-selected" type="button">1 LT</button>
+          <button class="qty-pill" type="button">2 LT</button>
+          </div>
+          <p class="product-card__desc">Con agradable fragancia de larga duración.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$1.000</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/limpieza-lavandina.svg" alt="Lavandina">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Lavandina</h3>
+          <p class="product-card__desc">1 LT — Desinfecta y limpia diferentes superficies del hogar.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$800</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/limpieza-perfuminas-piso.svg" alt="Perfuminas para piso">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Perfuminas para piso</h3>
+          <div class="qty-options">
+          <button class="qty-pill is-selected" type="button">1 LT</button>
+          <button class="qty-pill" type="button">1,5 LT</button>
+          </div>
+          <p class="product-card__desc">Diferentes aromas para dejar tu piso impecable.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$700</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="category-section" data-category="animales">
+      <h2 class="category-title">ANIMALES</h2>
+      <div class="card-grid">
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/animales-alimento-perros.svg" alt="Alimento para perros Nutribon">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Alimento para perros Nutribon</h3>
+          <p class="product-card__desc">1 kg — Raza pequeña.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$2.600</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/animales-alimento-gatos.svg" alt="Alimento para gatos Gati">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Alimento para gatos Gati</h3>
+          <p class="product-card__desc">1 kg.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$4.000</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/animales-alimento-conejos.svg" alt="Alimento para conejos">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Alimento para conejos</h3>
+          <p class="product-card__desc">1 kg — Para alimentación diaria.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$1.500</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/animales-alimento-pajaros.svg" alt="Alimento para pájaros">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Alimento para pájaros</h3>
+          <p class="product-card__desc">1 kg — Mezcla de semillas.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$2.000</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/animales-alimento-gallinas.svg" alt="Alimento para gallinas">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Alimento para gallinas</h3>
+          <p class="product-card__desc">1 kg — Mezcla de semillas.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$1.100</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="category-section" data-category="higiene">
+      <h2 class="category-title">HIGIENE</h2>
+      <div class="card-grid">
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/higiene-shampoo-algabo.svg" alt="Shampoo Algabo repuesto">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Shampoo Algabo repuesto</h3>
+          <p class="product-card__desc">300 ml.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$2.000</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/higiene-rollo-cocina.svg" alt="Rollo de cocina Cartabella">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Rollo de cocina Cartabella</h3>
+          <p class="product-card__desc">Pack x3.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$2.100</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/higiene-tintura-estereocolor.svg" alt="Tinturas EstereoColor">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Tinturas EstereoColor</h3>
+          <p class="product-card__desc">Variedad de colores para cabello.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$3.500</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/higiene-gel-gomina.svg" alt="Gel para pelo Gomina">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Gel para pelo Gomina</h3>
+          <p class="product-card__desc">150 gr.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$3.000</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/higiene-toallitas-doncella.svg" alt="Toallitas femeninas Doncella">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Toallitas femeninas Doncella</h3>
+          <p class="product-card__desc">Paquete.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$1.600</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="category-section" data-category="aromatizantes">
+      <h2 class="category-title">AROMATIZANTES</h2>
+      <div class="card-grid">
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/aromatizantes-textil-saphirus.svg" alt="Aromatizador textil Saphirus">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Aromatizador textil Saphirus</h3>
+          <p class="product-card__desc">250 ml.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$4.300</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/aromatizantes-sahumerios.svg" alt="Sahumerios artesanales">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Sahumerios artesanales</h3>
+          <p class="product-card__desc">Pack x10.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$1.300</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/aromatizantes-difusor-saphirus.svg" alt="Difusor aromático Saphirus">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Difusor aromático Saphirus</h3>
+          <p class="product-card__desc">Unidad.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$6.500</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/aromatizantes-vela-hornito.svg" alt="Velas blancas para hornitos">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Velas blancas para hornitos</h3>
+          <p class="product-card__desc">1 unidad.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$400</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/aromatizantes-aerosol-saphirus.svg" alt="Aerosol aromatizante Saphirus">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Aerosol aromatizante Saphirus</h3>
+          <p class="product-card__desc">185 gr.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$6.600</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="category-section" data-category="accesorios">
+      <h2 class="category-title">ACCESORIOS</h2>
+      <div class="card-grid">
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/accesorios-gomitas-cabello.svg" alt="Gomitas para cabello">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Gomitas para cabello</h3>
+          <p class="product-card__desc">Color negro liso — 1 unidad.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$1.000</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/accesorios-lima-unas.svg" alt="Lima de uñas">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Lima de uñas</h3>
+          <p class="product-card__desc">1 unidad.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$1.500</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/accesorios-balsamo-labial.svg" alt="Bálsamo labial">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Bálsamo labial</h3>
+          <p class="product-card__desc">1 unidad.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$4.000</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/accesorios-bolsas-consorcio.svg" alt="Bolsas de consorcio">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Bolsas de consorcio</h3>
+          <p class="product-card__desc">60x90 — 10 unidades.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$2.000</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="assets/icons/accesorios-bolsas-residuo.svg" alt="Bolsas de residuo">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Bolsas de residuo</h3>
+          <p class="product-card__desc">45x60 — 30 unidades.</p>
+          <div class="product-card__footer">
+            <span class="price-label">Precio</span>
+            <p class="price-value">$2.000</p>
+            <button class="btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+
+  </main>
+
+
+   <footer>
+    <div class="footer-container">
+      <div class="brand-social-container">
+        <h3 class="footer-Text-Brand">Ninalu</h3>
+        <img src="https://uploads.onecompiler.io/452na6zbn/452nade8j/87390.svg" alt="logo instagram" />
+      </div>
+      <p>Todos los derechos reservados - Ninalu 2026</p>
+      <div>
+        <div class="contact-footer">
+          <h4>Contactanos</h4>
+          <p>351351351351</p>
+        </div>
+        <div class="adress-footer">
+          <h4>Dirección</h4>
+        <p>Juan de Garay 1097</p>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+    
+</body>
+</html>
