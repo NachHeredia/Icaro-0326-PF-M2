@@ -529,3 +529,53 @@ h2{
   outline: 3px solid var(--celeste-500);
   outline-offset: 2px;
 }
+
+
+.page-title{
+  display: flex;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  color: var(--brand-celeste);
+  text-transform: uppercase;
+  margin: 2.5rem 0 1.25rem;
+ justify-content: center;
+}
+
+.category-filter-bar{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-pill{
+  padding: 0.4rem 1.2rem;
+  border: 1.5px solid var(--brand-celeste);
+  border-radius: 20px;
+  background-color: var(--bg-surface);
+  color: var(--brand-celeste);
+}
+
+.filter-pill:hover{
+  background-color: var(--brand-celeste);
+  color: var(--bg-surface);
+  font-weight: 600;
+}
+
+.category-title{
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  color: var(--brand-celeste);
+  text-transform: uppercase;
+  margin: 2.5rem 0 1.25rem;
+  text-align: start;
+  padding-left: var(--content-padding);
+}
+
+.card-grid{
+  padding: 0 var(--content-padding);
+}
