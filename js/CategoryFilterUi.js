@@ -44,7 +44,7 @@ export class FilterUi {
             const sectionCat = section.getAttribute('data-category');
 
             section.style.display =
-                sectionCat === categoryName ? 'grid' : 'none';
+                sectionCat === categoryName ? 'block' : 'none';
         });
 
         this.pills.forEach(pill => {

@@ -468,9 +468,9 @@ h2{
 }
 
 .qty-pill.is-selected {
-  background: var(--celeste-100);
-  border-color: var(--celeste-700);
-  color: var(--brand-celeste-hover);
+  background: var(--brand-celeste-hover);
+  border-color: var(--brand-celeste-hover);
+  color: var(--bg-surface);
   font-weight: 600;
 }
 
@@ -578,4 +578,12 @@ h2{
 
 .card-grid{
   padding: 0 var(--content-padding);
+  transition: all 2s ease;
+  transform: scaleY(1);
+}
+
+.filter-pill.is-active{
+  background-color: var(--brand-celeste);
+  color: var(--bg-surface);
+  font-weight: 600;
 }

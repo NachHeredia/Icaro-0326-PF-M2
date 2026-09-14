@@ -1,5 +1,6 @@
-import { FilterUi } from "./CategoryFilterUi";
+import { FilterUi } from "./CategoryFilterUi.js";
 
-const FilterUi = new FilterUi(manager);
-
-FilterUi.render();
+export function app(manager) {
+    const filterInstance = new FilterUi(manager);
+    filterInstance.render();
+}
