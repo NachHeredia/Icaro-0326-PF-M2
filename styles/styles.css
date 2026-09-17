@@ -139,6 +139,12 @@ h2{
   transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
 }
 
+.dropdown-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scaleY(1);
+}
+
 .dropdown-container:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
@@ -201,6 +207,7 @@ h2{
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
+
 
 .sale-section {
   position: relative;
