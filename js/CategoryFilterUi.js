@@ -11,9 +11,7 @@ export class FilterUi {
         if (currentHash) {
             this.filterByCategory(currentHash);
         } else {
-            const firstCategory =
-                this.pills[0]?.getAttribute('data-filter') || 'limpieza';
-
+            const firstCategory = this.pills[0]?.getAttribute('data-filter') || 'limpieza';
             this.filterByCategory(firstCategory);
         }
 
@@ -32,7 +30,7 @@ export class FilterUi {
 
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.replace('#', '').trim();
-
+            
             if (hash) {
                 this.filterByCategory(hash);
             }
