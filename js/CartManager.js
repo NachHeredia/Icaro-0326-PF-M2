@@ -39,7 +39,7 @@ addItem(productData, quantity = 1){
         return existing;
     }
 
-    this.item.push(newItem);
+    this.items.push(newItem);
     this._notifyChange();
     return newItem;
 }

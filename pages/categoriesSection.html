@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css" />
-    <link rel="stylesheet" href="./styles/cart-ui.css" />
+    <link rel="stylesheet" href="../styles/cart-ui.css" />
     <title>Categorías</title>
 </head>
 <body>
@@ -37,8 +37,9 @@
       </div>
     </div>
 
-    <button class="cart-btn">
+    <button class="cart-btn" id="cart-button">
       <span>Carrito</span>
+      <span id="cart-badge" class="cart-badge">0</span>
       <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
         <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -73,8 +74,8 @@
         <div class="product-card__body">
           <h3 class="product-card__name">Detergente Manos Suaves</h3>
           <div class="qty-options">
-          <button class="qty-pill is-selected" type="button">1/2 LT</button>
-          <button class="qty-pill" type="button">5 LT</button>
+          <button class="qty-pill is-selected" type="button" data-variant="1/2 LT" data-price="1200">1/2 LT</button>
+          <button class="qty-pill" type="button" data-variant="5 LT" data-price="10000">5 LT</button>
           </div>
           <p class="product-card__desc">Para lavar vajillas, corta la grasa y cuida tus manos.</p>
           <div class="product-card__footer">
@@ -96,8 +97,8 @@
         <div class="product-card__body">
           <h3 class="product-card__name">Jabón líquido para ropa</h3>
           <div class="qty-options">
-          <button class="qty-pill is-selected" type="button">1,5 LT</button>
-          <button class="qty-pill" type="button">2 LT</button>
+          <button class="qty-pill is-selected" type="button" data-variant="1,5 LT" data-price="2200">1,5 LT</button>
+          <button class="qty-pill" type="button" data-variant="2 LT" data-price="10000">2 LT</button>
           </div>
           <p class="product-card__desc">Tipo Skip, para lavar ropa a mano o en lavarropas.</p>
           <div class="product-card__footer">
@@ -119,8 +120,8 @@
         <div class="product-card__body">
           <h3 class="product-card__name">Suavizante para ropa</h3>
           <div class="qty-options">
-          <button class="qty-pill is-selected" type="button">1 LT</button>
-          <button class="qty-pill" type="button">2 LT</button>
+          <button class="qty-pill is-selected" type="button" data-variant="1 LT" data-price="1000">1 LT</button>
+          <button class="qty-pill" type="button" data-variant="2 LT" data-price="1800">2 LT</button>
           </div>
           <p class="product-card__desc">Con agradable fragancia de larga duración.</p>
           <div class="product-card__footer">
@@ -145,7 +146,7 @@
           <p class="product-card__desc">1 LT — Desinfecta y limpia diferentes superficies del hogar.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$800</p>
+            <p class="price-value" data-price="800">$800</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -162,8 +163,8 @@
         <div class="product-card__body">
           <h3 class="product-card__name">Perfuminas para piso</h3>
           <div class="qty-options">
-          <button class="qty-pill is-selected" type="button">1 LT</button>
-          <button class="qty-pill" type="button">1,5 LT</button>
+          <button class="qty-pill is-selected" type="button" data-variant="1 LT" data-price="700">1 LT</button>
+          <button class="qty-pill" type="button" data-variant="1,5 LT" data-price="1100">1,5 LT</button>
           </div>
           <p class="product-card__desc">Diferentes aromas para dejar tu piso impecable.</p>
           <div class="product-card__footer">
@@ -193,7 +194,7 @@
           <p class="product-card__desc">1 kg — Raza pequeña.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$2.600</p>
+            <p class="price-value" data-price="2600">$2.600</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -213,7 +214,7 @@
           <p class="product-card__desc">1 kg.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$4.000</p>
+            <p class="price-value" data-price="4000">$4.000</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -233,7 +234,7 @@
           <p class="product-card__desc">1 kg — Para alimentación diaria.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$1.500</p>
+            <p class="price-value" data-price="1500">$1.500</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -253,7 +254,7 @@
           <p class="product-card__desc">1 kg — Mezcla de semillas.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$2.000</p>
+            <p class="price-value" data-price="2000">$2.000</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -273,7 +274,7 @@
           <p class="product-card__desc">1 kg — Mezcla de semillas.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$1.100</p>
+            <p class="price-value" data-price="1100">$1.100</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -298,7 +299,7 @@
           <p class="product-card__desc">300 ml.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$2.000</p>
+            <p class="price-value" data-price="2000">$2.000</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -318,7 +319,7 @@
           <p class="product-card__desc">Pack x3.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$2.100</p>
+            <p class="price-value" data-price="2100">$2.100</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -338,7 +339,7 @@
           <p class="product-card__desc">Variedad de colores para cabello.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$3.500</p>
+            <p class="price-value" data-price="3500">$3.500</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -358,7 +359,7 @@
           <p class="product-card__desc">150 gr.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$3.000</p>
+            <p class="price-value" data-price="3000">$3.000</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -378,7 +379,7 @@
           <p class="product-card__desc">Paquete.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$1.600</p>
+            <p class="price-value" data-price="1600">$1.600</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -403,7 +404,7 @@
           <p class="product-card__desc">250 ml.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$4.300</p>
+            <p class="price-value" data-price="4300">$4.300</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -423,7 +424,7 @@
           <p class="product-card__desc">Pack x10.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$1.300</p>
+            <p class="price-value" data-price="1300">$1.300</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -443,7 +444,7 @@
           <p class="product-card__desc">Unidad.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$6.500</p>
+            <p class="price-value" data-price="6500">$6.500</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -463,7 +464,7 @@
           <p class="product-card__desc">1 unidad.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$400</p>
+            <p class="price-value" data-price="400">$400</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -483,7 +484,7 @@
           <p class="product-card__desc">185 gr.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$6.600</p>
+            <p class="price-value" data-price="6600">$6.600</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -508,7 +509,7 @@
           <p class="product-card__desc">Color negro liso — 1 unidad.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$1.000</p>
+            <p class="price-value" data-price="1000">$1.000</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -528,7 +529,7 @@
           <p class="product-card__desc">1 unidad.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$4.000</p>
+            <p class="price-value" data-price="4000">$4.000</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -548,7 +549,7 @@
           <p class="product-card__desc">Medida 60x90 — 10 unidades.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$2.000</p>
+            <p class="price-value" data-price="2000">$2.000</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -568,7 +569,7 @@
           <p class="product-card__desc">Medida: 45x60 — 30 unidades.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$2.000</p>
+            <p class="price-value" data-price="2000">$2.000</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>

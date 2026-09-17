@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/cart-ui.css" />
     <title>Ofertas de la Semana</title>
 </head>
 <body>
@@ -35,8 +36,9 @@
       </div>
     </div>
 
-    <button class="cart-btn">
+    <button class="cart-btn" id="cart-button">
       <span>Carrito</span>
+      <span id="cart-badge" class="cart-badge">0</span>
       <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
         <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -58,8 +60,8 @@
         <div class="product-card__body">
           <h3 class="product-card__name">Jabón líquido económico</h3>
           <div class="qty-options">
-          <button class="qty-pill is-selected" type="button">1 LT</button>
-          <button class="qty-pill" type="button">3 LT</button>
+          <button class="qty-pill is-selected" type="button" data-variant="5 LT" data-price="1100">1 LT</button>
+          <button class="qty-pill" type="button" data-variant="5 LT" data-price="2000">3 LT</button>
           </div>
           <p class="product-card__desc">Tipo Skip/Ariel, para lavar ropa.</p>
           <div class="product-card__footer">
@@ -80,7 +82,7 @@
           <p class="product-card__desc">1/2 LT — Para lavar vajillas.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$600</p>
+            <p class="price-value" data-price="600">$600</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -96,7 +98,7 @@
           <p class="product-card__desc">1 unidad.</p>
           <div class="product-card__footer">
             <span class="price-label">Precio</span>
-            <p class="price-value">$4.000</p>
+            <p class="price-value" data-price="4000">$4.000</p>
             <button class="btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </div>
@@ -129,7 +131,7 @@
   </footer>
 
 <script type="module">
-     import { initApp } from "./js/app.js";
+     import { initApp } from "../js/app.js";
      initApp();
 </script>
     

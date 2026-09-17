@@ -1,4 +1,4 @@
-import { cartManager } from "./CartManager";
+import { cartManager } from "./CartManager.js";
 
 const BADGE_SELECTOR = "#cart-badge";
 

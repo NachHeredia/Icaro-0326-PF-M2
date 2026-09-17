@@ -75,15 +75,15 @@ body{
 .qty-stepper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.6rem;
   border: 1.5px solid var(--btn-primary-bg);
   border-radius: 20px;
-  padding: 0.3rem 0.7rem;
-  width: fit-content;
+  padding: 1rem 2rem;
+  width: auto;
 }
 
 .qty-stepper button {
-  background: none;
   border: none;
   font-size: 1rem;
   font-weight: 800;
