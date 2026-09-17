@@ -40,20 +40,21 @@ export class FilterUi {
     }
 
     filterByCategory(categoryName) {
-        this.section.forEach(section => {
-            const sectionCat = section.getAttribute('data-category');
 
-            section.style.display =
-                sectionCat === categoryName ? 'block' : 'none';
+        const cleanCategory = categoryName.toLowerCase().trim();
+
+        this.section.forEach(section => {
+            const sectionCat = section.getAttribute('data-category')?.toLocaleLowerCase().trim();
+
+            if(sectionCat){
+                section.style.display = (sectionCat === cleanCategory) ? 'block' : 'none';
+            }
         });
 
         this.pills.forEach(pill => {
-            const pillTarget = pill.getAttribute('data-filter');
+            const pillTarget = pill.getAttribute('data-filter')?.toLocaleLowerCase().trim();;
 
-            pill.classList.toggle(
-                'is-active',
-                pillTarget === categoryName
-            );
+            pill.classList.toggle('is-selected',  pillTarget === cleanCategory);
         });
     }
 }

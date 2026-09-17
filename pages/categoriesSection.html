@@ -52,7 +52,7 @@
     <h1 class="page-title">Categorías</h1>
 
     <div class="category-filter-bar">
-      <button class="filter-pill" type="button" data-filter="limpieza">Limpieza</button>
+      <button class="filter-pill is-selected" type="button" data-filter="limpieza">Limpieza</button>
       <button class="filter-pill" type="button" data-filter="animales">Animales</button>
       <button class="filter-pill" type="button" data-filter="higiene">Higiene</button>
       <button class="filter-pill" type="button" data-filter="aromatizantes">Aromatizantes</button>
@@ -601,8 +601,8 @@
   </footer>
 
 <script type="module">
-  import { app } from "../js/app.js";
-  app();
+     import { initApp } from "./js/app.js";
+     initApp();
 </script>
     
 </body>
