@@ -6,7 +6,7 @@ function updateBadge(itemCount){
     const badge = document.querySelector(BADGE_SELECTOR);
     if(!badge) return;
     badge.textContent = itemCount;
-    badge.computedStyleMap.display = itemCount > 0 ? "inline-flex" : "none";
+    badge.style.display = itemCount > 0 ? "inline-flex" : "none"; 
 }
 
 export function initCartBadgeUi(){

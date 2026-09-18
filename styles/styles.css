@@ -111,13 +111,13 @@ h2{
   cursor: pointer;
   transition: opacity 2s ease;
   opacity: 0;
-  visibility: hidden;
+  visibility: visible;
   transform: translateY(-10px) scaleY(0.95);
   transform-origin: top center;
   transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
 }
 
-.dropdown-menu.is-open {
+.dropdown-menu .is-open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0) scaleY(1);
