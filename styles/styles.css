@@ -35,28 +35,6 @@ body{
 
   --content-padding: 80px;
 }
-[data-theme="dark"] {
-  --bg-main: #121217;
-  --bg-surface: #1E1E26;
-  --bg-surface-hover: #2A2A36;
-  --bg-celeste-subtle: #1A2D35;
-  --bg-lila-subtle: #282035;
-  --bg-durazno-subtle: #381E19;
-
-  --text-main: #F4F3F7;
-  --text-muted: #A0A0B0;
-  --text-on-accent: #121217;
-
-  --brand-celeste: #8FD3E8;
-  --brand-celeste-hover: #B4E5F4;
-  --brand-lila: #C4AEE0;
-  --brand-durazno: #FFB098;
-
-  --btn-primary-bg: #8FD3E8;
-  --btn-primary-text: #121217;
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-
 
 .nav-bar{
   display: flex;
@@ -206,6 +184,10 @@ h2{
   font-size: 0.95rem;
   cursor: pointer;
   transition: opacity 0.2s ease;
+}
+
+.cart-btn:hover{
+  transform: scale(1);
 }
 
 
