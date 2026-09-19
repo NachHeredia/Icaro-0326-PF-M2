@@ -159,6 +159,20 @@ document.dispatchEvent(
 
 ---
 
+## Cómo recorrer el proyecto
+
+Para esta versión las funciones que están disponibles para utilzar y probar son (en base a los detallado arriba):
+
+- Búsqueda en vivo de productos en la barra de búsqueda de la nav-bar
+- Despliegue y utilización de menú desplegable de Categorías de la nav-bar
+- Vista flotante de carrito de compras
+- Selección de categoría de productos desde la home
+- Selección de categoría (a través de pills) dentro de la sección de categorias, al seleccionar una categoría se ocultan las demás
+- Agregar, quitar productos al carrito desde botón "Agregar al carrito"
+- Seleccionar cantidad de litros en productos que tengan esta opción con la función de mostrar el precio acorde a esa cantidad.
+
+---
+
 ## 5.  High Quality Wireframe UI
 
 ![Imagen](https://www.figma.com/design/0eaPoJCKfpuY7r8nZGYSZM/PILAZE?node-id=2088-224&t=bx1GkUfNJ4wsqZAT-4)
