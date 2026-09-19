@@ -1,11 +1,19 @@
-# Ninalu — Estructura de contenido
+# Ninalu
 
-## 1. Datos generales del sitio
-| Campo | Valor |
-|---|---|
-| Nombre del local | Ninalu |
-| Paleta de colores | Celeste y Lila |
-| Stack técnico | HTML, CSS, Bootstrap, JavaScript |
+Proyecto final del Módulo 2 de JavaScript de la Diplomatura en Desarrollo Web FullStack.
+
+Realicé un e-commerce bpasico desarrollado con HTML, CSS y JavaSrcript Vanilla (ES Modules), sin frameworks ni builds tools. Todo el comportamiento dinámico del sitio (el carrito de compras, los filtros dentro de la sección de categorías, la barra de búsqueda y el menú desplegable) está resuelto con JavaScript nativo del navegador.
+
+## Índice
+- Stack Técnico
+- Arquitectura de JavaScript
+- Módulos
+- Eventos del carrito de compras
+- Atributos 'data-*'
+
+
+
+
 
 ## 2. Categorías (para el menú de navegación)
 1. Productos de limpieza
@@ -13,7 +21,7 @@
 3. Higiene y cuidado personal
 4. Aromatizantes
 5. Accesorios y productos complementarios
-6. Ofertas semanales *(sección destacada, no es una categoría de rubro sino una vidriera de promos)*
+6. Ofertas semanales *(sección destacada, no es una categoría de rubro sino una vidriera semanal de promociones)*
 
 ---
 
