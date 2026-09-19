@@ -6,90 +6,156 @@ Realicé un e-commerce bpasico desarrollado con HTML, CSS y JavaSrcript Vanilla 
 
 ## Índice
 - Stack Técnico
-- Arquitectura de JavaScript
+- Arquitectura realizada en JavaScript
 - Módulos
 - Eventos del carrito de compras
 - Atributos 'data-*'
 
+---
 
+## Stack Técnico
+| Tecnología | Uso |
+| --- | --- |
+| HTML | Estructura semántica de páginas |
+| CSS3 | Estilos y variables, en esta versión no se generó la opcion mobile/responsive para priorizar la interactividad de las funciones |
+| JavaScript ES Modules ('type = "module"') | Toda la lógica interactiva, sin frameworks ni bundler |
 
-
-
-## 2. Categorías (para el menú de navegación)
-1. Productos de limpieza
-2. Alimentos y productos para animales
-3. Higiene y cuidado personal
-4. Aromatizantes
-5. Accesorios y productos complementarios
-6. Ofertas semanales *(sección destacada, no es una categoría de rubro sino una vidriera semanal de promociones)*
+Todos los módulos JS se cargan directamente por el navegador vía `<script type = "module">`, por lo que **todos los imports entre archivos deben incluir la extensión `.js`** 
 
 ---
 
-## 3. Catálogo de productos
+## Arquitectura realizada en JavaScript
 
-### 3.1 Productos de limpieza
-| Producto | Descripción | Presentación | Precio |
-|---|---|---|---|
-| Detergente Manos Suaves | Para lavar vajillas | 1/2 LT | $1.200 |
-| | | 5 LT | $10.000 |
-| Jabón líquido tipo Skip | Para lavar ropa | 1,5 LT | $2.200 |
-| | | 2 LT | $2.800 |
-| Suavizante para ropa | Agradable fragancia | 1 LT | $1.000 |
-| | | 2 LT | $1.800 |
-| Lavandina | Desinfecta y limpia superficies del hogar | 1 LT | $800 |
-| Perfuminas para piso | Diferentes aromas | 1 LT | $700 |
-| | | 1,5 LT | $1.000 |
+El proyecto sigue un patrón simple de **módulos de responsabilidad**, orquestadps desde un único punto de entrada.
 
-### 3.2 Alimentos y productos para animales
-| Producto | Descripción | Presentación | Precio |
-|---|---|---|---|
-| Alimento para perros Nutribon | Raza pequeña | 1 kg | $2.600 |
-| Alimento para gatos Gati | — | 1 kg | $4.000 |
-| Alimento para conejos | Alimentación diaria | 1 kg | $1.500 |
-| Alimento para pájaros | Mezcla de semillas | 1 kg | $2.000 |
-| Alimento para gallinas | Mezcla de semillas | 1 kg | $1.100 |
 
-### 3.3 Higiene y cuidado personal
-| Producto | Descripción | Presentación | Precio |
-|---|---|---|---|
-| Shampoo Algabo | Repuesto | 300 ml | $2.000 |
-| Rollo de cocina Cartabella | — | Pack x3 | $2.100 |
-| Tinturas EstereoColor | Variedad de colores | Unidad | $3.500 |
-| Gel para pelo Gomina | — | 150 gr | $3.000 |
-| Toallitas femeninas Doncella | — | Paquete | $1.600 |
+### `app.js` - el orquestador
 
-### 3.4 Aromatizantes
-| Producto | Descripción | Presentación | Precio |
-|---|---|---|---|
-| Aromatizador textil Saphirus | — | 250 ml | $4.300 |
-| Sahumerios artesanales | — | Pack x10 | $1.300 |
-| Difusor aromático Saphirus | — | Unidad | $6.500 |
-| Velas blancas para hornitos | — | 1 unidad | $400 |
-| Aerosol aromatizante Saphirus | — | 185 gr | $6.600 |
+Cada página HTML un único script inline que importa y ejecuta `initApp ()`:
 
-### 3.5 Accesorios y productos complementarios
-| Producto | Descripción | Presentación | Precio |
-|---|---|---|---|
-| Gomitas para cabello | Color negro liso | 1 unidad | $1.000 |
-| Lima de uñas | — | 1 unidad | $1.500 |
-| Bálsamo labial | — | 1 unidad | $4.000 |
-| Bolsas de consorcio | 60x90 | Pack x10 | $2.000 |
-| Bolsas de residuo | 45x60 | Pack x30 | $2.000 |
+```js
+import { FilterUi } from "./CategoryFilterUi.js";
+import { initProductsUi } from "./ProductsUi.js";
+import { initCartBadgeUi } from "./CartBadgeUi.js";
+import { initCartDrawerUi } from "./CartDrawerUi.js";
+import { initSearchUi } from "./SearchUi.js";
+import { initNavDropdownUi } from "./NavDropdownUi.js";
+ 
+export function initApp() {
+  initCartBadgeUi();
+  initCartDrawerUi();
+  initSearchUi();
+  initNavDropdownUi();
+ 
+  if (document.querySelector(".product-card")) {
+    initProductsUi();
+  }
+ 
+  if (document.querySelector(".category-section")) {
+    new FilterUi();
+  }
+}
+```
 
-### 3.6 Ofertas semanales
-| Producto | Descripción | Presentación | Precio |
-|---|---|---|---|
-| Jabón líquido marca económica (tipo Skip/Ariel) | Para lavar ropa | 1 LT | $1.100 |
-| | | 3 LT | $3.000 |
-| Detergente Ecoblend | Para lavar vajillas | 1/2 LT | $600 |
-| Billeteras artesanales | — | 1 unidad | $4.000 |
+`initApp()` corre en **todas** las páginas del sitio, pero algunos módulos se inicializan condicionalmente (`ProductsUi.js` y `FilterUi.js`) según qué elementos existan en el DOM de esa página en particular - así, por ejemplo, `FilterUi` no hace nada en el home, que no tiene `.category-section`. 
 
 ---
 
-## 4. Notas del desarrollo
-- Cada producto se modelará como un objeto JS con: `id`, `nombre`, `descripcion`, `categoria`, `presentaciones: [{ medida, precio }]`, `imagen`.
-- Para los productos con más de una presentación (ej. Detergente Manos Suaves) se creará un array de opciones en vez de un precio único.
+## Módulos
 
+### `Cart.js` - modelos de datos
+Class `CartItem`: representa un ítem dentro del carrito. Expone dos getters calculados:
+- `key` → identificador único combinando producto + variante (`productId::variant`), usado para diferenciar, por ej, "Detergente 1/2LT" de "Detergente 5LT" como líneas distintas del carrito.
+- `lineTotal` → precio unitario * cantidad
+
+### `CartManager.js` — estado del carrito
+
+Class `CartManager`: instancia una única vez como singleton (`export const cartManager = new CartManager()`) e importada por todos los módulos que necesitan leer o modificar el carrito. Mantiene el array de `CartItem` y expone la API pública:
+
+| Método | Qué hace |
+| --- | --- |
+| `addItem(productData, quantity)` | **Agrega** un producto nuevo o suma cantidad si ya existe (mismo `key`) |
+| `removeItem(itemKey)` | Elimina un ítem |
+| `incrementQty(itemKey)` / `decrementQty(itemKey)` | Incrementa y decrementa (suma/resta) unidades y elimina el ítem si llega a 0 | 
+| `clear()` | Vacía el carrito | 
+| `getItems()` / `getItemCount()` / `getSubtotal()` / `getDiscount()` / `getTotal()` | Lecturas derivadas del estado | 
+| `hasOfferItems()` | Lee si hay algún ítem marcado como oferta | 
+
+Cada operación que modifica el estado dispara `_notifyChange()`, que emite el evento custom `cart:updated`. Es el mecanismo central que mantiene sincronizada toda la UI del carrito sin acoplar `CartManager` a ningún elemento del DOM.
+
+### `ProductsUi.js` — interacción de las cards de producto
+Por cada `.product-card` en la página: 
+- Engancha los clics de `.qty-pill` (selector de variante/cantidad) para actualizar el precio mostrado en la card, que es acorde a la cantidad del producto y marca la pill de esa cantidad como activa con el hover aplicado.
+- Construye dinámicamente un stepper (`+`/`-`) que reemplaza el botón "Agregar al carrito" una vez que el producto ya está en el carrito.
+- Al agregar, arma el objeto de datos del producto leyendo los atributos `data-*` de la card y llama a `cartManager.addItem(...)`.
+- Escucha el `cart:updated`  para sincronizar el stepper de cada card con la cantidad real que tiene ese producto en el carrito (por si se modifica desde el drawer).
+
+### `CartBadgeUi.js` — contador en la nav bar
+Actualiza el número dentro de `#cart-badge` y controla su visibilidad (`display: none` cuando el carrito está vacío). Se suscribe a `cart:updated` para mantenerse siempre sincronizado con el estado real del carrito, sin importar desde qué componente se haya modicado (una card, el drawer, etc.).
+
+### `CartDrawerUi.js` — panel lateral del carrito
+ 
+Es el módulo más grande. Responsabilidades:
+- Inyecta el markup del drawer (`.cart-drawer`) y el overlay en el `<body>` la primera vez que se ejecuta — no vive en el HTML estático de cada página, se genera por JS.
+- Renderiza la lista de ítems, subtotal, descuento y total en cada `cart:updated`.
+- Maneja apertura/cierre (click en el botón "Carrito", en el overlay, en la "×", etc).
+- Delega los clicks de incrementar/decrementar cantidad dentro del drawer a `cartManager`.
+### `CategoryFilterUi.js` — filtro de categorías
+ 
+Clase `FilterUi`. Lee el hash de la URL (`#limpieza`, `#animales`, etc.) al cargar la página de catálogo y muestra solo la sección (`.category-section[data-category]`) correspondiente, marcando la pill activa con la clase `is-selected`. Escucha tanto los clicks en las pills como el evento `hashchange`, así que también responde si el usuario navega con los botones atrás/adelante del navegador.
+ 
+### `NavDropdownUi.js` — menú "Categorías"
+ 
+Controla la apertura/cierre del menú desplegable de la nav bar por click (además del `:hover` que ya cubre el CSS). Cierra el menú al hacer click afuera, al presionar `Escape`, o al seleccionar una categoría.
+ 
+### `SearchUi.js` — búsqueda de productos
+ 
+Tiene dos modos, elegidos automáticamente según la página:
+- **Filtro inline** (en `categoriesSection.html`, donde ya hay `.product-card` en el DOM): oculta/muestra cards y secciones según coincida el texto tipeado con `data-name`.
+- **Dropdown de resultados** (en páginas sin catálogo cargado, como el Home): hace `fetch` a `categoriesSection.html`, parsea su HTML con `DOMParser` para armar un índice de productos en memoria, y renderiza un dropdown con foto + nombre + precio por cada coincidencia, linkeando a la categoría correspondiente.
+En ambos modos, la comparación de texto usa una función `normalize()` que pasa a minúsculas y remueve tildes, para que la búsqueda no distinga mayúsculas/acentos.
+
+
+## Eventos
+
+Todo el carrito se sincroniza mediante un **evento custom del DOM**, `cart:updated`, en vez de que los módulos se llamen entre sí directamente. Esto desacopla `CartManager` (que no tiene relación con la UI) de los 3 módulos que sí la renderizan:
+
+```js
+document.dispatchEvent(
+  new CustomEvent("cart:updated", {
+    detail: { items, itemCount, subtotal, discount, total },
+  })
+);
+```
+ 
+`CartBadgeUi.js`, `CartDrawerUi.js` y `ProductsUi.js` escuchan este evento de forma independiente. Cualquier acción que modifique el carrito - agregar desde una card, cambiar de cantidad desde el drawer, etc. - dispara el mismo evento y actualiza automáticamente los 3 puntos de la UI sin que ninguno necesite saber quién disparó el cambio.
+
+---
+
+## Atributo 'data-*'
+
+`ProductsUi.js` depende de que el HTML tenga estos atributos para poder leer los precios y cantidades:
+ 
+**Card con variantes (pills de cantidad):**
+```html
+<article class="product-card" data-product-id="..." data-name="..." data-category="..." data-offer="false">
+  ...
+  <button class="qty-pill is-selected" data-variant="1/2 LT" data-price="1200">1/2 LT</button>
+  <button class="qty-pill" data-variant="5 LT" data-price="10000">5 LT</button>
+  ...
+</article>
+```
+ 
+**Card sin variantes (con precio único):**
+```html
+<article class="product-card" data-product-id="..." data-name="..." data-category="..." data-offer="false" data-variant="Único">
+  ...
+  <p class="price-value" data-price="1100">$1.100</p>
+  ...
+</article>
+```
+ 
+`data-price` siempre en formato numérico simple (`1200`, no `$1.200` ni `1.200`)
 
 ---
 
